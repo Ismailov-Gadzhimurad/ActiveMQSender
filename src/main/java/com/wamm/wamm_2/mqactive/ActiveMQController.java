@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class ActiveMQController {
     @Autowired
     private JmsTemplate jmsTemplate;
-    @GetMapping(value = "/send/{phoneNumber}/{message}")
+    @PostMapping(value = "/send/{phoneNumber}/{message}")
     public ResponseEntity<MessageRequest> sendMessage(@RequestBody MessageRequest request) {
         try {
             // Сериализация объекта MessageRequest в JSON-строку
